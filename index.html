@@ -19,10 +19,11 @@
             <h1>
                 Todo List
             </h1>
+
             <table class="table bg-white w-25 my-2">
                 <tbody>
                     <tr v-for="(task, index) in myTasks">
-                        <td class="p-3 align-middle">
+                        <td class="p-3 align-middle" :style="task.done == true ? 'text-decoration: line-through;' : ''">
                             {{ task.text }}
                         </td>
                         <td class="text-end p-3">

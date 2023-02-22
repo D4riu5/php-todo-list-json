@@ -9,7 +9,7 @@
     foreach($tasks_decoded as $task) {
         $tasks[] = [
             'text' => $task['text'],
-            'done' => 'false',
+            'done' => false,
         ];
     }
 
