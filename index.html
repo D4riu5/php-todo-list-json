@@ -15,7 +15,25 @@
     <body class="bg-dark text-white">
         
     <div id="app">
-        {{ myTasks }}
+        <div class="container d-flex flex-column align-items-center my-5">
+            <h1>
+                Todo List
+            </h1>
+            <table class="table bg-white w-25 my-2">
+                <tbody>
+                    <tr v-for="(task, index) in myTasks">
+                        <td class="p-3 align-middle">
+                            {{ task.text }}
+                        </td>
+                        <td class="text-end p-3">
+                            <button class="btn btn-danger">
+                                <i class="fa-solid fa-trash text-white"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
