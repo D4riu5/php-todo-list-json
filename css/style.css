@@ -1,0 +1,9 @@
+.form-control:focus {
+    border-color: none;
+    box-shadow: none;
+} 
+
+/* .overflow-x{
+    max-width: 50px;
+    overflow-x: scroll;
+} */
