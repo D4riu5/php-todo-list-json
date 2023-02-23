@@ -3,7 +3,6 @@
     box-shadow: none;
 } 
 
-/* .overflow-x{
-    max-width: 50px;
-    overflow-x: scroll;
-} */
+td:first-child{
+    cursor: pointer;
+}

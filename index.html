@@ -37,6 +37,7 @@
               <td
                 class="p-3 align-middle overflow-x"
                 :style="task.done == true ? 'text-decoration: line-through;' : ''"
+                @click="updateTask(task)"
               >
                 {{ task.text }}
               </td>

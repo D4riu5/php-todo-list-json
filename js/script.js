@@ -6,6 +6,7 @@ createApp({
     return {
       readUrl: "read.php",
       createUrl: "create.php",
+      updateUrl: "update.php",
       myTasks: [],
       newTask: "",
     };
@@ -26,6 +27,24 @@ createApp({
         this.newTask = '';
       })
     },
+
+    updateTask(selectedTask) {
+      selectedTask.done = !selectedTask.done;
+
+      axios.post(this.updateUrl, {
+        updatedTasks: this.myTasks,
+      },
+        {
+          headers: {
+            "content-type": "application/json"
+          },
+        }
+      ).then(resp => {
+        console.log("tasks updated");
+        console.log(resp);
+      })
+
+    }
   },
   mounted() {
     console.log(`the component is now mounted.`);
