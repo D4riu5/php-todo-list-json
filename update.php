@@ -2,9 +2,6 @@
     
     // var_dump($data = json_decode(file_get_contents('php://input'), true));
     // die();
-    $tasks_string = file_get_contents('database.json');
-    $tasks_decoded = json_decode($tasks_string, true);
-
     $data = json_decode(file_get_contents('php://input'), true);
     
     $tasks_decoded = $data;

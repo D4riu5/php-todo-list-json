@@ -30,9 +30,7 @@ createApp({
       })
     },
 
-    updateTask(selectedTask) {
-      selectedTask.done = !selectedTask.done;
-
+    updateDatabase() {
       axios.post(this.updateUrl, this.myTasks, {
       },
         {
@@ -43,17 +41,16 @@ createApp({
       )
     },
 
+    updateTask(selectedTask) {
+      selectedTask.done = !selectedTask.done;
+
+      this.updateDatabase()
+    },
+
     removeTask(selectedTaskIndex) {
       this.myTasks.splice(selectedTaskIndex, 1);
 
-      axios.post(this.updateUrl, this.myTasks, {
-      },
-        {
-          headers: {
-            "content-type": "application/json"
-          },
-        }
-      )
+      this.updateDatabase()
     },
   },
   mounted() {
