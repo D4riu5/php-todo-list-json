@@ -23,16 +23,17 @@ createApp({
           },
         }
       ).then(resp => {
-        this.myTasks.push(resp.data.newTask);
-        this.newTask = '';
+        if (resp.data && resp.data.newTask) {
+          this.myTasks.push(resp.data.newTask);
+          this.newTask = '';
+        }
       })
     },
 
     updateTask(selectedTask) {
       selectedTask.done = !selectedTask.done;
 
-      axios.post(this.updateUrl, {
-        updatedTasks: this.myTasks,
+      axios.post(this.updateUrl, this.myTasks, {
       },
         {
           headers: {
@@ -40,14 +41,14 @@ createApp({
           },
         }
       ).then(resp => {
-        console.log("tasks updated");
-        console.log(resp);
+
       })
 
     }
   },
   mounted() {
     console.log(`the component is now mounted.`);
+
   },
   created() {
     axios.get(this.readUrl).then((resp) => {
