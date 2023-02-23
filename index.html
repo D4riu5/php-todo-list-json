@@ -31,7 +31,7 @@
       <div class="container d-flex flex-column align-items-center my-5">
         <h1>Todo List</h1>
         
-        <table class="table bg-white w-25 my-2">
+        <table class="table bg-white w-25 my-2" v-if="myTasks.length !== 0">
           <tbody>
             <tr v-for="(task, index) in myTasks">
               <td
@@ -49,6 +49,10 @@
             </tr>
           </tbody>
         </table>
+
+        <div v-else>
+          <h2 class="bg-white text-success p-3">Task list is empty!</h2>
+        </div>
 
         <form class="my-3 w-25" @submit.prevent="addNewTask()">
           <div class="input-group mb-3">
