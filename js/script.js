@@ -40,10 +40,20 @@ createApp({
             "content-type": "application/json"
           },
         }
-      ).then(resp => {
+      )
+    },
 
-      })
+    removeTask(selectedTaskIndex) {
+      this.myTasks.splice(selectedTaskIndex, 1);
 
+      axios.post(this.updateUrl, this.myTasks, {
+      },
+        {
+          headers: {
+            "content-type": "application/json"
+          },
+        }
+      )
     }
   },
   mounted() {

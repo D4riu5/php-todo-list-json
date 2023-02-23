@@ -42,7 +42,7 @@
                 {{ task.text }}
               </td>
               <td class="text-end p-3">
-                <button class="btn btn-danger">
+                <button class="btn btn-danger" @click="removeTask(index)">
                   <i class="fa-solid fa-trash text-white"></i>
                 </button>
               </td>
